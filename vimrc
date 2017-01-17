@@ -59,6 +59,7 @@ filetype plugin on
 syntax on
 set background=dark
 colorscheme solarized
+map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 if has('gui_running')
     set guioptions-=T          " remove the toolbar
