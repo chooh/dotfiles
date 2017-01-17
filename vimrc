@@ -12,6 +12,9 @@ Plugin 'chooh/brightscript.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kylef/apiblueprint.vim'
+Plugin 'lambdatoast/elm.vim'
+Plugin 'matchit.zip'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -22,7 +25,6 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'matchit.zip'
 
 call vundle#end()
 filetype plugin indent on
