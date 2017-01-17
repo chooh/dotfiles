@@ -1,0 +1,26 @@
+[alias]
+  co = checkout
+  st = status
+  up = pull --rebase
+  put = push origin HEAD
+  br = branch -a
+  lg1 = log --graph --all --format=format:'%C(bold cyan)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+  lg = !"git lg1"
+  rv = !git diff `git merge-base HEAD  master`..HEAD
+  diffc = diff --cached
+[color]
+  ui = true
+[color "diff"]
+  whitespace = red reverse
+[core]
+  whitespace=trailing-space,space-before-tab
+  editor = /usr/bin/vim
+  safecrlf = true
+  autocrlf = input
+[apply]
+  whitespace = error
+[diff]
+  algorithm = patience
+[push]
+  default = simple
