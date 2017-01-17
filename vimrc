@@ -36,7 +36,8 @@ set shiftwidth=2
 set smarttab
 set expandtab
 set autoindent
-set backspace=indent,eol,start " backspace for dummys
+" backspace for dummys
+set backspace=indent,eol,start
 set ruler
 set modeline
 " bash-like filenames completion
@@ -53,24 +54,10 @@ set ignorecase
 
 let mapleader = ","
 
-filetype on
-filetype plugin on
-
 syntax on
 set background=dark
 colorscheme solarized
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
-if has('gui_running')
-    set guioptions-=T          " remove the toolbar
-    set number
-endif
-
-if has('gui_macvim')
-    set co=120
-    set transparency=10
-    set guifont=Menlo:h12
-endif
 
 " bind <leader>d to toggle file browser
 " requires NERDTree
@@ -107,9 +94,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic
-let g:syntastic_check_on_open = 1               " Enable autochecks
-let g:syntastic_enable_signs = 1
 
+let g:syntastic_enable_signs = 1
 let g:syntastic_always_populate_loc_list = 1    " For correct works of next/previous error navigation
 
 " open quicfix window with all error found
