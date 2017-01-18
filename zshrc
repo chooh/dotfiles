@@ -1,5 +1,5 @@
 # ADD THIS TO ~/.zshrc
-# [ -f .aliases ] && source .aliases
+# [ -f .dotfiles/zshrc ] && source .dotfiles/zshrc
 
 # Preferred editor
 export EDITOR='vim'
