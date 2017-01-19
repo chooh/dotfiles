@@ -43,6 +43,7 @@ set modeline
 " bash-like filenames completion
 set wildmode=longest,full
 set wildmenu
+set wildignorecase
 set hlsearch
 
 "nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
@@ -77,10 +78,9 @@ set colorcolumn=+1
 set list
 set listchars=nbsp:¬,tab:>-,trail:•,extends:➮
 
-" jbuilder
-au BufNewFile,BufRead *.jbuilder        set filetype=ruby
-
-au BufNewFile,BufRead *.brs setlocal shiftwidth=4
+autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
+autocmd BufNewFile,BufRead *.brs setlocal shiftwidth=4
+autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
 " AirLine settings
 let g:airline_left_sep = '▶'
@@ -95,8 +95,11 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Syntastic
 
+" Enable autochecks
+let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
-let g:syntastic_always_populate_loc_list = 1    " For correct works of next/previous error navigation
+" For correct works of next/previous error navigation
+let g:syntastic_always_populate_loc_list = 1
 
 " open quicfix window with all error found
 nmap <silent> <leader>ll :Errors<cr>
