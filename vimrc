@@ -55,7 +55,7 @@ set wildmode=longest,full   " bash-like filenames completion
 let mapleader = ","
 
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
