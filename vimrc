@@ -18,13 +18,13 @@ Plugin 'matchit.zip'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 filetype plugin indent on
@@ -100,8 +100,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 " For correct works of next/previous error navigation
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers=['eslint']
 
-" open quicfix window with all error found
+" open quickfix window with all error found
 nmap <silent> <leader>ll :Errors<cr>
 " previous syntastic error
 nmap <silent> [ :lprev<cr>
