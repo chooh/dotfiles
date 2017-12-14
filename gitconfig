@@ -16,6 +16,7 @@
   editor = /usr/bin/vim
   safecrlf = true
   autocrlf = input
+  excludesfile = ~/.gitignore
 [apply]
   whitespace = error
 [diff]
