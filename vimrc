@@ -10,12 +10,12 @@ call vundle#begin()
 Plugin 'bling/vim-airline'
 Plugin 'chooh/brightscript.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'junegunn/fzf.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
 Plugin 'kylef/apiblueprint.vim'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'matchit.zip'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'slim-template/vim-slim'
@@ -29,29 +29,28 @@ Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
 
-set nocompatible
-set incsearch
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
-set autoindent
-" backspace for dummys
-set backspace=indent,eol,start
-set ruler
-set modeline
-" bash-like filenames completion
-set wildmode=longest,full
-set wildmenu
-set wildignorecase
-set hlsearch
-
-"nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
-
+set autoindent                    " carry over indenting from previous line
+set autoread                      " don't bother me hen a file changes
+set autowrite                     " write on :next/:prev/^Z
+set backspace=indent,eol,start    " backspace for dummys
+set colorcolumn=+1
 set directory=/tmp/
 set encoding=utf-8
-
+set expandtab
+set hlsearch
 set ignorecase
+set incsearch
+set laststatus=2
+set list                          " use :set list! to toggle visible whitespace on/off
+set listchars=nbsp:¬,tab:>-,trail:•,extends:➮
+set modeline
+set shiftwidth=2
+set smarttab
+set tabstop=2
+set textwidth=100  " Make it obvious where 100 characters is
+set wildignorecase
+set wildmenu
+set wildmode=longest,full   " bash-like filenames completion
 
 let mapleader = ","
 
@@ -69,14 +68,9 @@ map <D-/> <C-O>,c<space>
 " Omnicompletion
 imap <c-space> <c-x><c-o>
 
-"" Make it obvious where 80 characters is
-"" New rule: 100 chars width
-set textwidth=100
-set colorcolumn=+1
-
-"use :set list! to toggle visible whitespace on/off
-set list
-set listchars=nbsp:¬,tab:>-,trail:•,extends:➮
+" Use the space key to toggle folds
+nnoremap <space> za
+vnoremap <space> zf
 
 autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
 autocmd BufNewFile,BufRead *.brs setlocal shiftwidth=4
@@ -88,10 +82,20 @@ let g:airline_right_sep = '◀'
 let g:airline_section_b="%f%m"
 let g:airline_section_c=""
 let g:airline_section_z = '%3l:%3v'
-set laststatus=2
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+nmap ; :Buffers<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>a :Ag<CR>
+
+" Tell ack.vim to use ag (the Silver Searcher) instead
+let g:ackprg = 'ag --vimgrep'
+
+" map Ack to `\` character:
+nnoremap \ :Ack<SPACE>
 
 " Syntastic
 
@@ -108,25 +112,6 @@ nmap <silent> <leader>ll :Errors<cr>
 nmap <silent> [ :lprev<cr>
 " next syntastic error
 nmap <silent> ] :lnext<cr>
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " map Ag to `\` character:
-  nnoremap \ :Ag<SPACE>
-
-  " This searches for the text under the cursor and shows the results in a
-  " “quickfix” window:
-  nnoremap K :Ag "\b<cword>\b"<CR>
-endif
 
 " # Easier split navigations
 "
