@@ -11,9 +11,6 @@ antigen bundles <<EOBUNDLES
     git
     kubectl
 
-    # kubectl current context and namespace
-    superbrothers/zsh-kubectl-prompt
-
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting
 
@@ -39,5 +36,3 @@ unsetopt share_history
 # Maps `ctrl + →` and `ctrl + ←` under tmux
 bindkey '^[[C' forward-word
 bindkey '^[[D' backward-word
-
-export RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
