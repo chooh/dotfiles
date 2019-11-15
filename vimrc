@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kchmck/vim-coffee-script'
