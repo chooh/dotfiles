@@ -58,6 +58,7 @@ syntax on
 set background=dark
 colorscheme solarized
 map <leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+set pastetoggle=<leader>pp
 
 " bind <leader>d to toggle file browser
 " requires NERDTree
