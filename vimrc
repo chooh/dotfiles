@@ -202,3 +202,8 @@ map Т N
 map Ь M
 map Б <
 map Ю >
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
