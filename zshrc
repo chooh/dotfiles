@@ -9,6 +9,7 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
     git
+    docker
     kubectl
 
     # Syntax highlighting bundle.
