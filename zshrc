@@ -37,3 +37,5 @@ unsetopt share_history
 # Maps `ctrl + →` and `ctrl + ←` under tmux
 bindkey '^[[C' forward-word
 bindkey '^[[D' backward-word
+
+alias dcr='docker-compose run --rm'
