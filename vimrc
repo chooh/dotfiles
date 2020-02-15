@@ -7,6 +7,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
@@ -51,6 +52,7 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 set textwidth=100  " Make it obvious where 100 characters is
+set updatetime=500
 set wildignorecase
 set wildmenu
 set wildmode=longest,full   " bash-like filenames completion
