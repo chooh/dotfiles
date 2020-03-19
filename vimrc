@@ -12,6 +12,7 @@ Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kylef/apiblueprint.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -21,6 +22,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-syntastic/syntastic'
 
@@ -63,7 +65,10 @@ set pastetoggle=<leader>pp
 
 " bind <leader>d to toggle file browser
 " requires NERDTree
-nmap <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+nnoremap <silent> <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" bind <leader>b to toggle tag browser
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 map <D-/> <C-O>,c<space>
 
