@@ -13,7 +13,6 @@
   whitespace = red reverse
 [core]
   whitespace=trailing-space,space-before-tab
-  editor = /usr/bin/vim
   safecrlf = true
   autocrlf = input
   excludesfile = ~/.gitignore

@@ -29,7 +29,7 @@ antigen theme robbyrussell
 antigen apply
 
 # Preferred editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Do not share history
 unsetopt share_history
