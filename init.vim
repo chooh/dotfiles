@@ -7,7 +7,6 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -20,6 +19,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
@@ -81,10 +81,11 @@ autocmd BufNewFile,BufRead *.brs setlocal shiftwidth=4
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
 " AirLine settings
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_section_b="%f%m"
-let g:airline_section_c=""
+let g:airline#extensions#hunks#enabled = 0
+" truncate long branch names to a fixed length >
+let g:airline#extensions#branch#displayed_head_limit = 10
+" truncate all path sections but the last one
+let g:airline#extensions#branch#format = 2
 let g:airline_section_z = '%3l:%3v'
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
