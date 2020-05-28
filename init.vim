@@ -11,6 +11,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
@@ -94,8 +95,11 @@ nmap <Leader>r :Tags<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>a :Ag<CR>
 
-" map Ag to `\` character:
-nnoremap \ :Ag<SPACE>
+" Tell ack.vim to use ag (the Silver Searcher) instead
+let g:ackprg = 'ag --vimgrep'
+
+" map Ack to `\` character:
+nnoremap \ :Ack<SPACE>
 
 " Syntastic
 
