@@ -49,6 +49,8 @@ set modeline
 set relativenumber
 set shiftwidth=2
 set smarttab
+set spell
+set spelllang=en,ru
 set tabstop=2
 set textwidth=100  " Make it obvious where 100 characters is
 set updatetime=500
