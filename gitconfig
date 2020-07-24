@@ -11,11 +11,17 @@
   ui = true
 [color "diff"]
   whitespace = red reverse
+  frag = magenta bold
+  commit = yellow bold
 [core]
   whitespace=trailing-space,space-before-tab
   safecrlf = true
   autocrlf = input
   excludesfile = ~/.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager2 = delta --color-only
+[interactive]
+  diffFilter = delta --color-only
 [apply]
   whitespace = error
 [diff]
@@ -24,3 +30,8 @@
   default = simple
 [pull]
   rebase = true
+[delta]
+  syntax-theme = Solarized (dark)
+  whitespace-error-style = 22 reverse
+[diff-so-fancy]
+  markEmptyLines = false
