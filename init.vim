@@ -15,6 +15,8 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
+Plug 'shougo/deoplete-lsp'
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
@@ -72,9 +74,6 @@ nnoremap <silent> <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " bind <leader>b to toggle tag browser
 nnoremap <silent> <leader>b :TagbarToggle<CR>
-
-" Omnicompletion
-imap <c-space> <c-x><c-o>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq<CR>
@@ -135,3 +134,5 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
+
+let g:deoplete#enable_at_startup = 1
