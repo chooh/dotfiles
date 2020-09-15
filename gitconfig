@@ -17,7 +17,6 @@
   whitespace=trailing-space,space-before-tab
   safecrlf = true
   autocrlf = input
-  excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
   pager2 = delta --color-only
 [interactive]
