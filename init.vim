@@ -16,8 +16,6 @@ Plug 'natebosch/vim-lsc'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
-Plug 'shougo/deoplete-lsp'
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails'
@@ -135,8 +133,6 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
-
-let g:deoplete#enable_at_startup = 1
 
 set completeopt=menu,menuone,noinsert,noselect
 let g:lsc_server_commands = {
