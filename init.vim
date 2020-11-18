@@ -47,6 +47,7 @@ set laststatus=2
 set list                          " use :set list! to toggle visible whitespace on/off
 set listchars=nbsp:¬,tab:>-,trail:•,extends:➮
 set modeline
+set number
 set relativenumber
 set shiftwidth=2
 set smarttab
