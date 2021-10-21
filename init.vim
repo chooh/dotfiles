@@ -118,6 +118,10 @@ nmap <silent> [ :lprev<cr>
 " next syntastic error
 nmap <silent> ] :lnext<cr>
 
+" Jump between hunks
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+
 " # Easier split navigations
 "
 " We can use different key mappings for easy navigation between splits to save a keystroke.
