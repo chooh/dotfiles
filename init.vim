@@ -140,3 +140,5 @@ set splitbelow
 set splitright
 
 let g:deoplete#enable_at_startup = 1
+" # Make background transparent
+hi Normal guibg=NONE ctermbg=NONE
